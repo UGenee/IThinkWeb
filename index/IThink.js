@@ -1,4 +1,4 @@
-function More() { // Container Button very start of the home page
+function start() { // Container Button very start of the home page
     window.open("/index/test.html");
 }
 
