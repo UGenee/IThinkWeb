@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: wheat;
+    background-color: transparent;
     position: fixed;
 }
 .nav a {
@@ -74,18 +74,22 @@ body {
 .container {
     background: linear-gradient(135deg, var(--primary), var(--secondary)),
                 url(/images/front.jpg) no-repeat center center / cover;
-    width: 65%;
+    width: 70%;
     height: 50%;
     background-color: #a6a6a6;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-top: calc(60px + 20px);
     border-radius: 20px;
 }
 .container .intro-text {
     color: white;
+    width: 100%;
+    height: auto;
 }
 .container .introduction {
+    color: white;
     width: 100%;
     height: 50%;
     padding: 0px 0px 0px 25px;
@@ -93,9 +97,27 @@ body {
     text-decoration: none;
 }
 .container .sub-intro {
+    color: white;
     width: 50%;
     height: 50%;
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 25px 25px;
     font-size: 20px;
     text-decoration: none;    
+}
+.container .intro-btn {
+    width: 100%;
+    height: auto;
+}
+.container .BtnMore {
+    position: relative;
+    float: right;
+    margin: 160px 70px 0px 0px;  
+    font-size: 20px;
+    color: white;
+    padding: 15px;
+    align-items: center;
+    background: linear-gradient(to bottom right, #2475b7 0%, #0f273f 100%);
+    border: 5px line;
+    border-radius: 20px;
+    border-color: #2475b7;
 }
