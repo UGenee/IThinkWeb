@@ -121,3 +121,28 @@ body {
     border-radius: 20px;
     border-color: #2475b7;
 }
+.content {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background-color: #125f82;
+    color: white;
+}
+
+.content .card-container {
+    padding: 20px;
+}
+
+.content .card-container .cards {
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+}
+
+.content .card-container .cards img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
