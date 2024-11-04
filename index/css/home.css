@@ -6,7 +6,7 @@ body {
     justify-content: center; */
     background-color: white;
     overflow: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 a {
     text-decoration: none;
@@ -40,7 +40,7 @@ html  {
     float: left;
     color: black;
     padding: 10px 10px 10px 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .nav a:hover {
     color: #81c0dc;
@@ -58,6 +58,7 @@ html  {
 .nav img {
     width: auto;
     max-height: 50px;
+    cursor: pointer;
 }
 .nav .wrap {
     display: flex;
@@ -72,7 +73,7 @@ html  {
     border: none;
     outline: auto;
     outline-color: #a6a6a6;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Introduction a.k.a main */
@@ -192,4 +193,37 @@ html  {
     padding: 5px 10px;
     color: #125f82;
     background-color: white;
+}
+
+/* Testimony Parts */
+.testimony-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.testimony-container h1 {
+    background-color: #125f82;
+    color: white;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+.testimony-container .testimony {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+    align-items: center;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+.testimony-container .testimony h2 {
+    text-decoration: underline;
+    text-decoration-color: #81c0dc;
+}
+.testimony-container .testimony .text {
+    padding: calc(30px + 10px);
 }
