@@ -1,0 +1,174 @@
+body {
+    background-color: #125f82;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #81c0dc;
+}
+
+h2 {
+    color: #81c0dc;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+/* Reverse the order of the "Taste-A-Place" project */
+.taste-row {
+    flex-direction: row-reverse;
+    /* Move the slideshow to the left */
+}
+
+.explanation {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.6;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1rem;
+    color: #f2f2f2;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mySlides {
+    display: none;
+}
+
+.slideshow-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    opacity: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slideshow-container:hover .prev,
+.slideshow-container:hover .next {
+    opacity: 1;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .taste-row {
+        flex-direction: column;
+    }
+
+    .explanation {
+        margin-bottom: 30px;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .slideshow-container {
+        max-width: 100%;
+    }
+}
