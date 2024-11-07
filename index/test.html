@@ -3,149 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Course Information</title>
+    <title>Our Projects</title>
+    <!-- Google Fonts for a better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            color: #333;
+            background-color: #125f82;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+            font-size: 2.5rem;
+            color: #81c0dc;
+        }
+
+        h2 {
+            color: #81c0dc;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .project-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        /* Reverse the order of the "Taste-A-Place" project */
+        .taste-row {
+            flex-direction: row-reverse;
+            /* Move the slideshow to the left */
+        }
+
+        .explanation {
+            flex: 1;
+            padding: 20px;
+            text-align: justify;
+            line-height: 1.6;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1rem;
+            color: #f2f2f2;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        h1,
-        h2,
-        h3 {
-            color: #004c99;
+        .mySlides {
+            display: none;
         }
 
-        .hero {
-            background: #e0f0ff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 20px;
+        .slideshow-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .quick-facts,
-        .modules,
-        .career-pathways,
-        .applications,
-        .cta-section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background: #f9f9f9;
-        }
-
-        .quick-facts ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .quick-facts li {
-            margin-bottom: 8px;
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            font-size: 24px;
             font-weight: bold;
-        }
-
-        .cta {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .cta a {
-            background-color: #004c99;
             color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: 0.3s ease;
+            opacity: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .cta a:hover {
-            background-color: #003366;
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .slideshow-container:hover .prev,
+        .slideshow-container:hover .next {
+            opacity: 1;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .taste-row {
+                flex-direction: column;
+            }
+
+            .explanation {
+                margin-bottom: 30px;
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <h1>Our Projects</h1>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Data Science</h1>
-            <p>Unlock the power of data to make informed decisions and gain insights. Explore a career in one of the
-                most in-demand fields in IT.</p>
-        </section>
-
-        <!-- Quick Facts Section -->
-        <section class="quick-facts">
-            <h2>Quick Facts</h2>
-            <ul>
-                <li>Average Salary: $95,000/year</li>
-                <li>High Demand in Job Market</li>
-                <li>Entry-Level Roles: Data Analyst, Business Intelligence Analyst</li>
-                <li>Core Skills: Statistics, Machine Learning, Data Visualization</li>
-            </ul>
-        </section>
-
-        <!-- Why Study Section -->
-        <section>
-            <h2>Why Study Data Science?</h2>
-            <p>Data Science is a vital skill in today’s digital economy. Professionals in this field use data to drive
-                decision-making, optimize operations, and create impactful solutions.</p>
-        </section>
-
-        <!-- Course Curriculum / Topics Covered -->
-        <section class="modules">
-            <h2>What You’ll Learn</h2>
-            <ul>
-                <li>Introduction to Data Science</li>
-                <li>Data Visualization Techniques</li>
-                <li>Machine Learning Fundamentals</li>
-                <li>Statistical Analysis</li>
-            </ul>
-        </section>
-
-        <!-- Career Pathways Section -->
-        <section class="career-pathways">
-            <h2>Career Pathways</h2>
-            <p>Data Science opens doors to various exciting job roles and career growth. Potential job titles include:
-            </p>
-            <ul>
-                <li>Data Analyst</li>
-                <li>Data Scientist</li>
-                <li>Machine Learning Engineer</li>
-                <li>Business Intelligence Analyst</li>
-            </ul>
-            <p>Industries Hiring: Finance, Healthcare, E-commerce, Technology</p>
-        </section>
-
-        <!-- Real-World Applications Section -->
-        <section class="applications">
-            <h2>Real-World Applications</h2>
-            <p>Data Science is used in various sectors, from optimizing supply chains to predicting customer behaviors.
-                Example projects include:</p>
-            <ul>
-                <li>Analyzing user data to improve product recommendations</li>
-                <li>Predicting sales trends using historical data</li>
-                <li>Using machine learning to detect fraud</li>
-            </ul>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="cta-section">
-            <div class="cta">
-                <a href="#">Explore More IT Courses</a>
+        <div class="project-row taste-row">
+            <div class="explanation">
+                <h2>Taste-A-Place</h2>
+                <p>An interactive website designed to explore and celebrate the diverse culinary traditions of various
+                    continents and countries.
+                    Users can explore and try different areas of foods and unique ingredients from different cultures
+                    and countries by following the steps.
+                    The website provides detailed descriptions of the various dishes, combined with colorful pictures of
+                    the beauty that lies in international cuisine.
+                    Users can filter the searches by region or even the type of cuisine that best suits their
+                    requirements, ensuring ease in finding specific dishes or ingredients they wish to know more about.
+                </p>
             </div>
-        </section>
+
+            <!-- Taste-A-Place Slideshow -->
+            <div class="slideshow-container taste" id="tasteSlideshow">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="Taste-A-Place.png" alt="Taste-A-Place">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="Taste-A-Place 1.png" alt="Taste-A-Place">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="Taste-A-Place 2.png" alt="Taste-A-Place">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="Taste-A-Place 3.png" alt="Taste-A-Place">
+                </div>
+
+                <!-- Dots for slideshow -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide('taste', 1)"></span>
+                    <span class="dot" onclick="currentSlide('taste', 2)"></span>
+                    <span class="dot" onclick="currentSlide('taste', 3)"></span>
+                    <span class="dot" onclick="currentSlide('taste', 4)"></span>
+                </div>
+
+                <!-- Buttons for Next/Previous -->
+                <button class="prev" onclick="plusSlides('taste', -1)"></button>
+                <button class="next" onclick="plusSlides('taste', 1)"></button>
+            </div>
+        </div>
+
+        <div class="project-row">
+            <div class="explanation">
+                <h2>Budget Buddy</h2>
+                <p>An intuitive mobile app where you can track and manage your daily expenses.
+                    Budget Buddy helps users manage work expenses, travel expenses, and all purchases.
+                    Users can set budgets for different categories, receive notifications when they approach their
+                    spending limits, and generate reports that offer insights into their spending habits.
+                    The app also includes features such as goal setting, reminders for upcoming bills, and tips for
+                    saving money, making it an essential tool for anyone looking to improve their financial health.
+                </p>
+            </div>
+
+            <!-- Budget Buddy Slideshow -->
+            <div class="slideshow-container budget" id="budgetSlideshow">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="/images/BAON1.png" alt="Budget Buddy">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="/images/BAON2.png" alt="Budget Buddy">
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="/images/BAON3.png" alt="Budget Buddy">
+                </div>
+
+                <!-- Dots for slideshow -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide('budget', 1)"></span>
+                    <span class="dot" onclick="currentSlide('budget', 2)"></span>
+                    <span class="dot" onclick="currentSlide('budget', 3)"></span>
+                </div>
+
+                <!-- Buttons for Next/Previous -->
+                <button class="prev" onclick="plusSlides('budget', -1)"></button>
+                <button class="next" onclick="plusSlides('budget', 1)"></button>
+            </div>
+        </div>
     </div>
 
+    <script>
+        let tasteSlideIndex = 1;
+        let budgetSlideIndex = 1;
+
+        // Initialize slideshows
+        showSlides('taste', tasteSlideIndex);
+        showSlides('budget', budgetSlideIndex);
+
+        function showSlides(project, n) {
+            let i;
+            let slides = document.getElementById(`${project}Slideshow`).getElementsByClassName("mySlides");
+            let dots = document.getElementById(`${project}Slideshow`).getElementsByClassName("dot");
+            if (n > slides.length) {
+                if (project === 'taste') tasteSlideIndex = 1;
+                if (project === 'budget') budgetSlideIndex = 1;
+            }
+            if (n < 1) {
+                if (project === 'taste') tasteSlideIndex = slides.length;
+                if (project === 'budget') budgetSlideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[project === 'taste' ? tasteSlideIndex - 1 : budgetSlideIndex - 1].style.display = "block";
+            dots[project === 'taste' ? tasteSlideIndex - 1 : budgetSlideIndex - 1].className += " active";
+        }
+
+        function plusSlides(project, n) {
+            if (project === 'taste') {
+                showSlides('taste', tasteSlideIndex += n);
+            } else if (project === 'budget') {
+                showSlides('budget', budgetSlideIndex += n);
+            }
+        }
+
+        function currentSlide(project, n) {
+            if (project === 'taste') {
+                showSlides('taste', tasteSlideIndex = n);
+            } else if (project === 'budget') {
+                showSlides('budget', budgetSlideIndex = n);
+            }
+        }
+    </script>
 </body>
 </html>
