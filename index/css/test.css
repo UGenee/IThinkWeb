@@ -1,173 +1,55 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Body */
 body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Header */
-header {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
+.carousel {
+    position: relative;
+    width: 360px;
+    /* Width of the carousel */
+    overflow: hidden;
+    /* Hide overflow */
+    margin: auto;
+}
+
+.carousel-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
+    /* Use flexbox to align items in a row */
+    transition: transform 0.5s ease;
+    /* Smooth transition for sliding */
 }
 
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-header nav a {
-    color: #fff;
-    margin: 0 1em;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    background: #e0ffe0;
-    padding: 3em 5%;
+.text-box {
+    min-width: 330px;
+    /* Ensure each text box has the same width */
+    padding: 20px;
+    background-color: #125f82;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 0.5em;
-}
-
-.hero p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-/* Sections */
-section {
-    padding: 2em 5%;
-    margin-bottom: 1em;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Section Headings */
-section h2 {
-    font-size: 1.8em;
-    color: #4CAF50;
-    margin-bottom: 0.5em;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 0.3em;
-}
-
-/* Overview Section */
-.overview p {
-    margin-bottom: 1em;
-}
-
-.overview ul {
-    list-style-type: square;
-    padding-left: 1.5em;
-}
-
-.overview ul li {
-    margin-bottom: 0.5em;
-}
-
-/* Curriculum Section */
-.curriculum .module {
-    margin-bottom: 1em;
-}
-
-.curriculum .module h3 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.curriculum .module p {
-    color: #666;
-}
-
-/* Careers Section */
-.careers ul {
-    list-style-type: disc;
-    padding-left: 1.5em;
-}
-
-.careers ul li {
-    margin-bottom: 0.5em;
-}
-
-/* Requirements Section */
-.requirements p {
-    font-size: 1em;
-    color: #666;
-}
-
-/* Testimonials Section */
-.testimonials blockquote {
-    font-style: italic;
-    color: #333;
-    padding: 0.5em;
-    background: #e9ffe9;
-    border-left: 4px solid #4CAF50;
-    margin: 1em 0;
-}
-
-/* CTA Section */
-.cta {
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
-
-.cta .cta-button {
-    display: inline-block;
-    background-color: #4CAF50;
+    line-height: 1.5;
     color: #fff;
-    padding: 0.8em 1.5em;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
-.cta .cta-button:hover {
-    background-color: #45a049;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    text-align: center;
-    padding: 1em 5%;
-    margin-top: 2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
 
-footer nav a {
-    color: #fff;
-    margin: 0 1em;
-    text-decoration: none;
-    font-weight: bold;
+.carousel-button.prev {
+    left: 10px;
+    /* Position left button */
 }
 
-footer nav a:hover {
-    text-decoration: underline;
+.carousel-button.next {
+    right: 10px;
+    /* Position right button */
 }
