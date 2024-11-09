@@ -26,6 +26,7 @@ body {
 
 .sub-text {
     justify-content: center;
+    text-align: center;
 }
 
 .heading p {
@@ -35,8 +36,9 @@ body {
     font-size: 2.5rem;
     color: white;
     padding: 10px;
-    background-color: #81c0dc;
     border-radius: 20px;
+    text-decoration: underline;
+    text-decoration-color: #81c0dc;
 }
 
 h2 {
