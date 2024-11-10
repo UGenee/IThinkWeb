@@ -75,47 +75,12 @@
                     <img src="/images/BAON2.png" alt="B.A.O.N">
                 </div>
 
-                <button class="prev" onclick="plusSlides('budget', -1)">&lt;</button>
-                <button class="next" onclick="plusSlides('budget', 1)">&gt;</button>
+                <button class="prev" onclick="plusSlides('budget', -1)">&#10094;</button>
+                <button class="next" onclick="plusSlides('budget', 1)">&#10095;</button>
             </div>
         </div>
     </div>
 
 </body>
-<script>
-    let slideIndices = {
-        taste: 1,
-        budget: 1
-    };
-    
-    showSlides('taste', slideIndices.taste);
-    showSlides('budget', slideIndices.budget);
-
-    function showSlides(project, n) {
-        let slides = document.getElementById(`${project}Slideshow`).getElementsByClassName("mySlides");
-        if (n > slides.length) slideIndices[project] = 1;
-        if (n < 1) slideIndices[project] = slides.length;
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndices[project] - 1].style.display = "block";
-    }
-
-    function plusSlides(project, n) {
-        slideIndices[project] += n;
-        showSlides(project, slideIndices[project]);
-    }
-
-    // NAVIGATION BAR LOADING
-    function loadNav() {
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-container').innerHTML = data;
-            });
-    }
-    window.onload = loadNav;
-
-</script>
+<script src="/scripts/portfolio.js"></script>
 </html>
