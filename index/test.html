@@ -3,60 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimony</title>
+    <title>IT Courses Website</title>
     <link rel="stylesheet" href="/index/css/test.css">
 </head>
 <body>
-    <div class="testimony-container">
-        <div class="testimony">
-            <div class="text">
-                <h2>Ephraim Bonifacio</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, facere necessitatibus odit
-                    officiis sed rem modi at maiores neque, harum nam vel tenetur ea quod, asperiores voluptatibus
-                    ratione voluptatem tempore.</p>
-            </div>
-            <div class="text">
-                <h2>Meljune Gatila</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quis saepe architecto quisquam
-                    commodi facere quam cum libero eligendi voluptatem animi sed quasi, id beatae nemo, quos corrupti
-                    laboriosam at?</p>
-            </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>IT Courses</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for courses..." onkeyup="searchCourses()">
         </div>
+    </nav>
 
-        <div class="carousel-button prev" onclick="prevSlide()">❮</div>
-        <div class="carousel-button next" onclick="nextSlide()">❯</div>
-    </div>
+    <!-- Main Content -->
+    <main>
+        <section id="courses">
+            <div class="course-card" data-course-name="Computer Science">Computer Science</div>
+            <div class="course-card" data-course-name="Information Technology">Information Technology</div>
+            <div class="course-card" data-course-name="Software Engineering">Software Engineering</div>
+            <div class="course-card" data-course-name="Data Science">Data Science</div>
+            <div class="course-card" data-course-name="Cybersecurity">Cybersecurity</div>
+        </section>
+    </main>
 
+    <script src="/scripts/test.js"></script>
 </body>
-<script>
-    let currentIndex = 0;
-
-    function showSlide(index) {
-        const slides = document.querySelectorAll('.text');
-        const totalSlides = slides.length;
-
-        // Loop back to the beginning or end  
-        if (index >= totalSlides) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = totalSlides - 1;
-        } else {
-            currentIndex = index;
-        }
-
-        const offset = -currentIndex * 350; // Adjusted based on the width of the text boxes  
-        document.querySelector('.testimony-container').style.transform = `translateX(${offset}px)`;
-    }
-
-    function nextSlide() {
-        showSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentIndex - 1);
-    }
-
-    // Initially display the first slide  
-    showSlide(currentIndex);
-</script>
 </html>

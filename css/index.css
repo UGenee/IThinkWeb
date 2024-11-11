@@ -209,6 +209,7 @@
     text-decoration-color: #81c0dc;
 }
 
+
 @media (max-width: 768px) {
     .container {
         margin-top: calc(50px + 40px);

@@ -39,3 +39,5 @@ let slideIndices = {
         slideIndices[project] += n;
         showSlides(project, slideIndices[project]);
     }
+
+    

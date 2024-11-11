@@ -47,3 +47,5 @@ function start() { // Container Button very start of the home page
 function Home() {
     window.open("/index/home.html");
 }
+
+

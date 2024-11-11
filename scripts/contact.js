@@ -1,3 +1,4 @@
+// LOAD NAV
 function loadNav() {
     fetch('nav.html')
         .then(response => response.text())
@@ -13,3 +14,4 @@ function loadNav() {
         });
 }
 window.onload = loadNav;
+

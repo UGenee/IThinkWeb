@@ -61,6 +61,8 @@ h2 {
     background: #e0e0e0;
 }
 
+
+
 @media (min-width: 600px) {
     #contact {
         max-width: 500px;
