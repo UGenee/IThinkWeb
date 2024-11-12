@@ -3,29 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Courses Website</title>
-    <link rel="stylesheet" href="/index/css/test.css">
+    <title>Home | IThink</title>
+    <link rel="icon" type="image/x-icon" href="/images/Icon.ico">
+    <style>
+        :root {
+    --primary: hsla(194, 100%, 50%, 0.65);
+    --secondary: hsla(197, 60%, 33%, 0);
+}
+
+.space-LOL {
+    padding-top: 50px;
+}
+
+.container {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)),
+        url(/images/front.jpg) no-repeat center center / cover;
+    width: 70%;
+    height: 50%;
+    background-color: #a6a6a6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: calc(60px + 20px);
+    border-radius: 20px;
+    margin: 25px auto;
+    z-index: 1;
+}
+
+.container .intro-text {
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.container .introduction {
+    color: white;
+    width: 100%;
+    height: 50%;
+    padding: 0px 0px 0px 25px;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.container .sub-intro {
+    color: white;
+    width: 50%;
+    height: 50%;
+    padding: 0px 0px 25px 25px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.container .intro-btn {
+    width: 100%;
+    height: auto;
+    margin-top: calc(100px + 90px);
+}
+
+.container .BtnStart {
+    margin: 20px 0;
+    font-size: 18px;
+    color: white;
+    padding: 12px 20px;
+    background: linear-gradient(to bottom right, #2475b7 0%, #0f273f 100%);
+    border: none;
+    border-radius: 20px;
+    float: right;
+    margin-right: calc(40px + 20px);
+}
+
+.container .BtnStart:hover {
+    color: #81c0dc;
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #125f82;
+    color: white;
+}
+
+.content .card-container {
+    padding: 10px;
+}
+
+.content .card-container .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content .card-container .cards img {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.content .card-container .cards .card {
+    width: 80%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #81c0dc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.content .card-container .cards .card h2 {
+    font-size: 28px;
+}
+
+.content .card-container .cards .card p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.content .card-container .cards .card a {
+    margin-top: 10px;
+    font-size: 16px;
+    border: 2px solid #4a76ee;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #125f82;
+    background-color: white;
+}
+/* Testimony Carousel */
+.testimony-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background-color: #f4f4f4;
+}
+
+.testimony-container h1 {
+    background-color: #125f82;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: auto;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(18, 95, 130, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50px;
+}
+
+.carousel-control.prev {
+    width: 50px;
+    height: 50px;
+    left: 50px;
+}
+
+.carousel-control.next {
+    width: 50px;
+    height: 50px;
+    right: 50px;
+}
+
+.testimony-container .text {
+    width: 80%;
+    text-align: justify;
+}
+
+.testimony-container .text h2 {
+    text-decoration: underline;
+    text-decoration-color: #81c0dc;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: calc(50px + 40px);
+    }
+    .container .introduction {
+        font-size: 30px;
+    }
+
+    .container .sub-intro {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .content .card-container .cards .card {
+        width: 90%;
+    }
+
+    .content .card-container .cards .card h2 {
+        font-size: 24px;
+    }
+
+    .content .card-container .cards .card p {
+        font-size: 16px;
+    }
+
+    .testimony-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-item {
+        padding: 20px;
+    }
+
+    .testimony-container .text {
+        width: 95%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .carousel-control.prev {
+        width: 25px;
+        left: 5px;
+    }
+
+    .carousel-control.next {
+        width: 25px;
+        right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container .introduction {
+        font-size: 24px;
+    }
+
+    .container .sub-intro {
+        font-size: 14px;
+    }
+
+    .content .card-container .cards .card h2 {
+        font-size: 20px;
+    }
+
+    .content .card-container .cards .card p {
+        font-size: 14px;
+    }
+
+    .testimony-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-control {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    .testimony-container .text h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-control.prev {
+        left: 5px;
+    }
+
+    .carousel-control.next {
+        right: 5px;
+    }
+}
+
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <h1>IT Courses</h1>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for courses..." onkeyup="searchCourses()">
+    <div id="nav-container"></div>
+
+    <div class="space-LOL"></div>
+
+    <div class="container">
+        <div class="intro-text">
+            <p class="introduction">Start learning</br>about IT</br></p>
+            <p class="sub-intro">Unlock your hidden talent by learning about IT-related courses!</p>
         </div>
-    </nav>
+        <div class="intro-btn">
+            <button class="BtnStart" onclick="start()">Start Now</button>
+        </div>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <section id="courses">
-            <div class="course-card" data-course-name="Computer Science">Computer Science</div>
-            <div class="course-card" data-course-name="Information Technology">Information Technology</div>
-            <div class="course-card" data-course-name="Software Engineering">Software Engineering</div>
-            <div class="course-card" data-course-name="Data Science">Data Science</div>
-            <div class="course-card" data-course-name="Cybersecurity">Cybersecurity</div>
-        </section>
-    </main>
 
-    <script src="/scripts/test.js"></script>
+    <div class="content">
+        <div class="card-container">
+            <div class="cards">
+                <div class="card">
+                    <img src="/images/SoftEng.png" alt="Software Development">
+                    <h2>Software Development</h2>
+                    <p>Software Development involves designing and building applications to solve real-world problems.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="/images/DataSci.png" alt="Data Science">
+                    <h2>Data Science</h2>
+                    <p>Data Science involves the use of statistics to extract meaningful insights from data to use for
+                        business.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="/images/CompEng.png" alt="Computer Engineering">
+                    <h2>Computer Engineering</h2>
+                    <p>Computer Engineering merges computer science and electrical engineering to create hardware and
+                        software.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimony-container">
+        <h1>Reviews</h1>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="text">
+                        <h2>Ephraim Bonifacio</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, facere necessitatibus
+                            odit
+                            officiis sed rem modi at maiores neque, harum nam vel tenetur ea quod, asperiores
+                            voluptatibus
+                            ratione voluptatem tempore.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text">
+                        <h2>Meljune Gatila</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quis saepe architecto
+                            quisquam
+                            commodi facere quam cum libero eligendi voluptatem animi sed quasi, id beatae nemo, quos
+                            corrupti laboriosam at?</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text">
+                        <h2>John Doe</h2>
+                        <p>This service has changed my life! Highly recommend it to everyone.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text">
+                        <h2>Jane Smith</h2>
+                        <p>Exceptional quality and fantastic customer service. Will use again!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text">
+                        <h2>Robert Brown</h2>
+                        <p>My experience was wonderful! Everything exceeded my expectations.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- LAGAY NYO CODE SA BABA NITO -->
+
 </body>
+
+<script src="/scripts/Index.js"></script>
+<script src="/scripts/nav.js"></script>
 </html>
