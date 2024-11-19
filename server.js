@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
 const mysql = require("./db");
+const nodemailer = require("nodemailer");
 
 const app = express();
 const port = 3008;
@@ -70,6 +71,37 @@ app.get("/reviews", (req, res) => {
     } else {
       res.json(results); // Send the results as JSON to the frontend
     }
+  });
+});
+
+// Route to send email
+app.post("/send-email", (req, res) => {
+  const { to, subject, body } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.elasticemail.com",
+    port: 587,
+    auth: {
+      user: "ignfebbyy@gmail.com", 
+      pass: "582E8738C22F4E367C56AA1698BE5159C39C", 
+    },
+  });
+
+  // Setup email data
+  const mailOptions = {
+    from: "ignfebbyy@gmail.com",
+    to,
+    subject, 
+    text: body,
+  };
+
+  // Send mail
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+      return res.status(500).send("Error sending email");
+    }
+    res.status(200).send("Email sent successfully: ");
   });
 });
 

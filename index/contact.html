@@ -10,17 +10,22 @@
 <body>
 <div id="nav-container"></div>
 
+<div class="space-LOL"></div>
+
 <div class="contact-wrapper">
     <div id="contact">
         <h2>Contact Us</h2>
-        <input type="text" class="input-field" placeholder="Your Name">
-        <input type="text" class="input-field" placeholder="Your Email">
-        <textarea class="input-field2" placeholder="Your Message"></textarea>
-        <button class="submit-button">Submit</button>
+            <form action="#">
+        <input type="text" class="input-field" id="name" placeholder="Your Name" autocomplete="off">
+        <input type="text" class="input-field" id="email" placeholder="Your Email" autocomplete="off">
+        <textarea class="input-field2" id="message" placeholder="Your Message"></textarea>
+        <button class="submit-button" type="submit">Send Message</button>
+            </form>
     </div>
 </div>
 
 </body>
 <script src="contact.js"></script>
 <script src="nav.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 </html>

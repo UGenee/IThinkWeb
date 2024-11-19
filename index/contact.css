@@ -3,15 +3,21 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #f0f4f8;
+    padding: 20px;
+}
+
+.space-LOL {
+    padding-top: 50px;
 }
 
 #contact {
     margin: 20px;
-    padding: 20px;
+    padding: 40px;
     background: #125f82;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -19,52 +25,63 @@
 h2 {
     color: #e0f7fa;
     text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
-.input-field {
-    margin: 10px 0;
-    padding: 10px;
+.input-field,
+.input-field2 {
+    margin: 15px 0;
+    padding: 15px;
     width: 100%;
-    height: auto;
     border: 1px solid #ffffff;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
     color: #333;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus,
+.input-field2:focus {
+    border-color: #e0f7fa;
+    outline: none;
+    box-shadow: 0 0 5px rgba(224, 247, 250, 0.5);
 }
 
 .input-field2 {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-    height: auto;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: #333;
-    resize: none;
-    overflow: hidden;
+    resize: vertical;
+    height: 120px;
 }
 
 .submit-button {
     background: #ffffff;
     color: #125f82;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     display: block;
     width: 100%;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .submit-button:hover {
     background: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
+.submit-button:active {
+    transform: translateY(0);
+}
 
 @media (min-width: 600px) {
     #contact {
-        max-width: 500px;
+        max-width: 600px;
     }
 }

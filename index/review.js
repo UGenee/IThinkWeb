@@ -1,3 +1,4 @@
+
 function loadNav() {
   // Fetch the HTML content of the navigation bar
   fetch("nav.html")

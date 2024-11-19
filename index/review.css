@@ -128,3 +128,9 @@ h3 {
     text-decoration: underline;
     text-decoration-color: #81c0dc;
 }
+
+@media (max-width: 768px) {
+    .space-LOL {
+        margin-top: 100px;
+    }
+}
