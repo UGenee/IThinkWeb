@@ -28,7 +28,7 @@ const getPageWithNavbar = (page) => {
         if (err) {
           return reject(err);
         }
-        resolve(navbar + content); // Combine navbar and page content
+        resolve(navbar + content);
       });
     });
   });
@@ -36,7 +36,7 @@ const getPageWithNavbar = (page) => {
 
 // Route for serving the review page
 app.get("/", (req, res) => {
-  getPageWithNavbar("review.html")
+  getPageWithNavbar("home.html")
     .then((combinedContent) => {
       res.send(combinedContent);
     })

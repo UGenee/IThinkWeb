@@ -6,7 +6,8 @@ function initializeSearch() {
         "Home": "home.html",
         "Portfolio": "portfolio.html",
         "Contacts": "contact.html",
-        "About": "about.html"
+        "About": "about.html",
+        "Review": "review.html"
     };
 
     searchInput.addEventListener("input", function () {
