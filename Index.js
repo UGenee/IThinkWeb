@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, "index")));
+app.use(express.static(path.join(__dirname, "docs")));
 
 // Function to read the navbar and combine it with the page content
 const getPageWithNavbar = (page) => {
-  const navbarPath = path.join(__dirname, "index", "nav.html");
-  const pagePath = path.join(__dirname, "index", page);
+  const navbarPath = path.join(__dirname, "docs", "nav.html");
+  const pagePath = path.join(__dirname, "docs", page);
 
   return new Promise((resolve, reject) => {
     fs.readFile(navbarPath, "utf8", (err, navbar) => {
