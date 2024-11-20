@@ -3,7 +3,7 @@ function initializeSearch() {
   const searchResults = document.getElementById("search-results");
 
   const suggestions = {
-    Home: "home.html",
+    Home: "index.html",
     Portfolio: "portfolio.html",
     Contacts: "contact.html",
     About: "about.html",
