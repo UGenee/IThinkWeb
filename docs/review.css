@@ -1,4 +1,9 @@
-
+html {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
 
 input[type=text],
 select {
@@ -135,7 +140,10 @@ h3 {
     color: #fff;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     font-size: 0.9rem;
 }
 
