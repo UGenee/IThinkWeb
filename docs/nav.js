@@ -18,7 +18,8 @@ function initializeSearch() {
     "Software Engineering": "Software-eng.html",
     "Mobile App Development": "Moble-App.html",
     "Web Development": "WEB-DEV.html",
-    "Network Engineering": "Network-ENG.html"
+    "Network Engineering": "Network-ENG.html",
+    Courses: "course-list.html",
   };
 
   searchInput.addEventListener("input", function () {
@@ -50,7 +51,6 @@ function initializeSearch() {
   });
 }
 
-
 function loadNav() {
   // Fetch the HTML content of the navigation bar
   fetch("nav.html")
@@ -61,26 +61,23 @@ function loadNav() {
       // Dynamically load the CSS
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "nav.css"; // Path to your CSS file
+      link.href = "template.css"; // Path to your CSS file
       document.head.appendChild(link);
 
-      // Initialize search functionality (assuming it's defined somewhere)
       initializeSearch();
 
-      // Toggle the navigation menu when the dropdown button is clicked
-      document.querySelector(".dropdown-button").addEventListener("click", function () {
+      document
+        .querySelector(".dropdown-button")
+        .addEventListener("click", function () {
           const nav = document.querySelector(".nav");
           nav.classList.toggle("show");
 
-        const container = document.querySelector(".nav");
-        if (container.style.height === "900px") {
-          container.style.height = "auto";
-        } else {
-          container.style.height = "200px";
-        }
-      });
-      
-
+          if (nav.classList.contains("show")) {
+            nav.style.height = "450px";
+          } else {
+            nav.style.height = "60px";
+          }
+        });
     })
     .catch((error) => console.error("Error loading navigation:", error));
 }
