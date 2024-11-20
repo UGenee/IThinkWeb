@@ -4,9 +4,11 @@ const path = require("path");
 const fs = require("fs");
 const mysql = require("./db");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
+
 
 const app = express();
-const port = 3008;
+const port = process.env.PORT || 3008;
 
 // Middleware to parse JSON and form data
 app.use(bodyParser.json());
@@ -82,16 +84,16 @@ app.post("/send-email", (req, res) => {
     host: "smtp.elasticemail.com",
     port: 587,
     auth: {
-      user: "ignfebbyy@gmail.com", 
-      pass: "582E8738C22F4E367C56AA1698BE5159C39C", 
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   // Setup email data
   const mailOptions = {
-    from: "ignfebbyy@gmail.com",
+    from: process.env.EMAIL_USER,
     to,
-    subject, 
+    subject,
     text: body,
   };
 
