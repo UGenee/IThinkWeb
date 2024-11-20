@@ -8,6 +8,17 @@ function initializeSearch() {
     Contacts: "contact.html",
     About: "about.html",
     Review: "review.html",
+    "Artificial Intelligence": "AI.html",
+    "Computer Engineering": "ComEng.html",
+    "Computer Science": "CompSci.html",
+    Cybersecurity: "CyberSecurity.html",
+    "Data Science": "Data-Science.html",
+    "Information Technology": "IT.html",
+    Java: "Java.html",
+    "Software Engineering": "Software-eng.html",
+    "Mobile App Development": "Moble-App.html",
+    "Web Development": "WEB-DEV.html",
+    "Network Engineering": "Network-ENG.html"
   };
 
   searchInput.addEventListener("input", function () {

@@ -6,13 +6,13 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     color: red;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 .nav {
