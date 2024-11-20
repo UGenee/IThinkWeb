@@ -53,7 +53,7 @@ function initializeSearch() {
 
 function loadNav() {
   // Fetch the HTML content of the navigation bar
-  fetch("nav.html")
+  fetch("/index/nav.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("nav-container").innerHTML = data;
@@ -61,7 +61,7 @@ function loadNav() {
       // Dynamically load the CSS
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "nav.css"; // Path to your CSS file
+      link.href = "/index/nav.css"; // Path to your CSS file
       document.head.appendChild(link);
 
       // Initialize search functionality (assuming it's defined somewhere)
