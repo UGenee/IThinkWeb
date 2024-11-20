@@ -251,6 +251,11 @@
   .container {
     margin-top: calc(50px + 40px);
   }
+
+  .space-LOL {
+    margin-top: 80px;
+  }
+
   .container .introduction {
     font-size: 30px;
   }

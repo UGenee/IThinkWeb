@@ -124,7 +124,7 @@ a {
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
-        height: auto;
+        height: 120px;
     }
 
     .nav .logo {
@@ -148,8 +148,9 @@ a {
 
     .nav a {
         padding: 10px;
-        width: 100%;
+        width: auto;
         text-align: left;
+        background-color: white;
     }
 
     .nav input {
@@ -169,7 +170,7 @@ a {
     .nav.show .links {
         display: flex;
         position: absolute;
-        left: 0;
+        gap: 10px;
         top: 60px;
         background-color: white;
         width: 100%;

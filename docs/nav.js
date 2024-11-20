@@ -68,12 +68,19 @@ function loadNav() {
       initializeSearch();
 
       // Toggle the navigation menu when the dropdown button is clicked
-      document
-        .querySelector(".dropdown-button")
-        .addEventListener("click", function () {
+      document.querySelector(".dropdown-button").addEventListener("click", function () {
           const nav = document.querySelector(".nav");
           nav.classList.toggle("show");
-        });
+
+        const container = document.querySelector(".nav");
+        if (container.style.height === "900px") {
+          container.style.height = "auto";
+        } else {
+          container.style.height = "200px";
+        }
+      });
+      
+
     })
     .catch((error) => console.error("Error loading navigation:", error));
 }
