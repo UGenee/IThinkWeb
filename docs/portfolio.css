@@ -146,6 +146,16 @@ p {
     animation-duration: 1.5s;
 }
 
+/* Footer Section */
+.footer {
+    background-color: #0f273f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
 
 @keyframes fade {
     from {
