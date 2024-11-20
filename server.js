@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "index")));
-app.use(express.static(path.join(__dirname, "IThinkWeb")));
 
 // Function to read the navbar and combine it with the page content
 const getPageWithNavbar = (page) => {
@@ -38,7 +37,7 @@ const getPageWithNavbar = (page) => {
 
 // Route for serving the home page
 app.get("/", (req, res) => {
-  getPageWithNavbar("home.html")
+  getPageWithNavbar("index.html")
     .then((combinedContent) => {
       res.send(combinedContent);
     })
