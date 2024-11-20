@@ -1,70 +1,111 @@
-function loadNav() {
-  // Fetch the HTML content of the navigation bar
-  fetch("/index/nav.html")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("nav-container").innerHTML = data;
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const fs = require("fs");
+const mysql = require("./db");
+const nodemailer = require("nodemailer");
 
-      // Dynamically load the CSS
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "/index/nav.css"; // Path to your CSS file
-      document.head.appendChild(link);
+const app = express();
+const port = 3008;
 
-      // Initialize search functionality (if defined)
-      // initializeSearch();
+// Middleware to parse JSON and form data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-      // Toggle the navigation menu when the dropdown button is clicked
-      const dropdownButton = document.querySelector(".dropdown-button");
-      if (dropdownButton) {
-        dropdownButton.addEventListener("click", function () {
-          const nav = document.querySelector(".nav");
-          nav?.classList.toggle("show");
-        });
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, "index")));
+
+// Function to read the navbar and combine it with the page content
+const getPageWithNavbar = (page) => {
+  const navbarPath = path.join(__dirname, "index", "nav.html");
+  const pagePath = path.join(__dirname, "index", page);
+
+  return new Promise((resolve, reject) => {
+    fs.readFile(navbarPath, "utf8", (err, navbar) => {
+      if (err) {
+        return reject(err);
       }
-    })
-    .catch((error) => console.error("Error loading navigation:", error));
-}
-
-function setupCarousel() {
-  const slides = document.querySelectorAll(".carousel-item");
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    if (index >= slides.length) {
-      currentSlide = 0;
-    } else if (index < 0) {
-      currentSlide = slides.length - 1;
-    } else {
-      currentSlide = index;
-    }
-    const offset = -currentSlide * 100;
-    const carouselInner = document.querySelector(".carousel-inner");
-    if (carouselInner) {
-      carouselInner.style.transform = `translateX(${offset}%)`;
-    }
-  }
-
-  document
-    .querySelector(".carousel-control.next")
-    ?.addEventListener("click", () => showSlide(currentSlide + 1));
-  document
-    .querySelector(".carousel-control.prev")
-    ?.addEventListener("click", () => showSlide(currentSlide - 1));
-}
-
-// Load the navigation bar and initialize the carousel
-window.onload = () => {
-  loadNav();
-  setupCarousel();
+      fs.readFile(pagePath, "utf8", (err, content) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(navbar + content);
+      });
+    });
+  });
 };
 
-// HOME PAGE
-function start() {
-  // Container Button very start of the home page
-  window.open("course-list.html");
-}
+// Route for serving the home page
+app.get("/", (req, res) => {
+  getPageWithNavbar("index.html")
+    .then((combinedContent) => {
+      res.send(combinedContent);
+    })
+    .catch((err) => {
+      console.error("Error loading page:", err);
+      res.status(500).send("Internal Server Error");
+    });
+});
 
-function Home() {
-  window.open("home.html");
-}
+// Route to handle form submission
+app.post("/process-form", (req, res) => {
+  const { id, message } = req.body;
+  const sql = "INSERT INTO reviews (review_name, review_message) VALUES (?, ?)";
+  mysql.query(sql, [id, message], (err) => {
+    if (err) {
+      console.error("Error inserting review:", err);
+      res.status(500).send("Internal Server Error");
+    } else {
+      res.json("Review submitted successfully!");
+    }
+  });
+});
+
+// Route to fetch all reviews (for the carousel)
+app.get("/reviews", (req, res) => {
+  const sql = "SELECT * FROM reviews";
+  mysql.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error fetching reviews:", err);
+      res.status(500).send("Internal Server Error");
+    } else {
+      res.json(results); // Send the results as JSON to the frontend
+    }
+  });
+});
+
+// Route to send email
+app.post("/send-email", (req, res) => {
+  const { to, subject, body } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.elasticemail.com",
+    port: 587,
+    auth: {
+      user: "ignfebbyy@gmail.com", 
+      pass: "582E8738C22F4E367C56AA1698BE5159C39C", 
+    },
+  });
+
+  // Setup email data
+  const mailOptions = {
+    from: "ignfebbyy@gmail.com",
+    to,
+    subject, 
+    text: body,
+  };
+
+  // Send mail
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+      return res.status(500).send("Error sending email");
+    }
+    res.status(200).send("Email sent successfully: ");
+  });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
