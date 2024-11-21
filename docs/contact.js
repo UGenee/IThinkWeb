@@ -1,6 +1,6 @@
 function loadNav() {
   // Fetch the HTML content of the navigation bar
-  fetch("nav.html")
+  fetch("nav.php")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("nav-container").innerHTML = data;

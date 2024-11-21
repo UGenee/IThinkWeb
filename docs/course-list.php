@@ -19,43 +19,43 @@
                 <img src="AI.png" alt="Artificial Intelligence">
                 <h2>Artificial Intelligence</h2>
                 <p>Discover how machines learn, adapt, and solve complex problems.</p>
-                <a href="AI.html">Learn More</a>
+                <a href="AI.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="CompEng.png" alt="Computer Engineering">
                 <h2>Computer Engineering</h2>
                 <p>Design and integrate hardware and software to build modern systems.</p>
-                <a href="ComEng.html">Learn More</a>
+                <a href="ComEng.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="cs.png" alt="Computer Science">
                 <h2>Computer Science</h2>
                 <p>Study computational systems and the foundations of programming.</p>
-                <a href="CompSci.html">Learn More</a>
+                <a href="CompSci.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="cybersecurity.png" alt="Cybersecurity">
                 <h2>Cybersecurity</h2>
                 <p>Learn to protect digital information from ever-evolving threats.</p>
-                <a href="CyberSecurity.html">Learn More</a>
+                <a href="CyberSecurity.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="DataSci.png" alt="Data Science">
                 <h2>Data Science</h2>
                 <p>Analyze data to uncover trends and make data-driven decisions.</p>
-                <a href="Data-Science.html">Learn More</a>
+                <a href="Data-Science.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="it.png" alt="Information Technology">
                 <h2>Information Technology</h2>
                 <p>Master the management and implementation of IT infrastructure.</p>
-                <a href="IT.html">Learn More</a>
+                <a href="IT.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="java.png" alt="Java">
                 <h2>Java</h2>
                 <p>Explore Java programming to develop robust, scalable applications.</p>
-                <a href="Java.html">Learn More</a>
+                <a href="Java.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="SoftEng.png" alt="Software Engineering">
@@ -67,19 +67,19 @@
                 <img src="mobile-dev.png" alt="Mobile App Development">
                 <h2>Mobile App Development</h2>
                 <p>Develop innovative apps for Android and iOS platforms.</p>
-                <a href="Moble-App.html">Learn More</a>
+                <a href="Moble-App.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="web-dev.png" alt="Web Development">
                 <h2>Web Development</h2>
                 <p>Build modern websites using cutting-edge tools and frameworks.</p>
-                <a href="WEB-DEV.html">Learn More</a>
+                <a href="WEB-DEV.php">Learn More</a>
             </div>
             <div class="course-card">
                 <img src="net-work.png" alt="Network Engineering">
                 <h2>Network Engineering</h2>
                 <p>Design and maintain networks to enable seamless connectivity and communication.</p>
-                <a href="Network-ENG.html">Learn More</a>
+                <a href="Network-ENG.php">Learn More</a>
             </div>
         </div>
     </div>

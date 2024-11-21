@@ -14,19 +14,19 @@
 <div class="nav">
     <div class="wrap">
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="/docs/LogoVer2.png" />
             </a>
         </div>
         <div class="links-container">
             <button class="dropdown-button">☰</button>
             <div class="links">
-                <a href="index.html" data-table="Home">Home</a>
-                <a href="/docs/about.html" data-table="About">About</a>
-                <a href="/docs/contact.html" data-table="Contact">Contacts</a>
-                <a href="/docs/portfolio.html" data-table="Portfolio">Portfolio</a>
-                <a href="/docs/review.html" data-table="Review">Review</a>
-                <a href="/docs/course-list.html" data-table="Courses">Courses</a>
+                <a href="index.php" data-table="Home">Home</a>
+                <a href="/docs/about.php" data-table="About">About</a>
+                <a href="/docs/contact.php" data-table="Contact">Contacts</a>
+                <a href="/docs/portfolio.php" data-table="Portfolio">Portfolio</a>
+                <a href="/docs/review.php" data-table="Review">Review</a>
+                <a href="/docs/course-list.php" data-table="Courses">Courses</a>
             </div>
         </div>
     </div>
@@ -58,21 +58,21 @@
                     <h2>Software Development</h2>
                     <p>Software Development involves designing and building applications to solve real-world problems.
                     </p>
-                    <a href="/docs/Software-eng.html">Learn More</a>
+                    <a href="/docs/Software-eng.php">Learn More</a>
                 </div>
                 <div class="card">
                     <img src="/docs/DataSci.png" alt="Data Science">
                     <h2>Data Science</h2>
                     <p>Data Science involves the use of statistics to extract meaningful insights from data to use for
                         business.</p>
-                    <a href="/docs/Data-Science.html">Learn More</a>
+                    <a href="/docs/Data-Science.php">Learn More</a>
                 </div>
                 <div class="card">
                     <img src="/docs/CompEng.png" alt="Computer Engineering">
                     <h2>Computer Engineering</h2>
                     <p>Computer Engineering merges computer science and electrical engineering to create hardware and
                         software.</p>
-                    <a href="/docs/ComEng.html">Learn More</a>
+                    <a href="/docs/ComEng.php">Learn More</a>
                 </div>
             </div>
         </div>

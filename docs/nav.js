@@ -3,23 +3,23 @@ function initializeSearch() {
   const searchResults = document.getElementById("search-results");
 
   const suggestions = {
-    Home: "index.html",
-    Portfolio: "portfolio.html",
-    Contacts: "contact.html",
-    About: "about.html",
-    Review: "review.html",
-    "Artificial Intelligence": "AI.html",
-    "Computer Engineering": "ComEng.html",
-    "Computer Science": "CompSci.html",
-    Cybersecurity: "CyberSecurity.html",
-    "Data Science": "Data-Science.html",
-    "Information Technology": "IT.html",
-    Java: "Java.html",
-    "Software Engineering": "Software-eng.html",
-    "Mobile App Development": "Moble-App.html",
-    "Web Development": "WEB-DEV.html",
-    "Network Engineering": "Network-ENG.html",
-    Courses: "course-list.html",
+    Home: "index.php",
+    Portfolio: "portfolio.php",
+    Contacts: "contact.php",
+    About: "about.php",
+    Review: "review.php",
+    "Artificial Intelligence": "AI.php",
+    "Computer Engineering": "ComEng.php",
+    "Computer Science": "CompSci.php",
+    Cybersecurity: "CyberSecurity.php",
+    "Data Science": "Data-Science.php",
+    "Information Technology": "IT.php",
+    Java: "Java.php",
+    "Software Engineering": "Software-eng.php",
+    "Mobile App Development": "Moble-App.php",
+    "Web Development": "WEB-DEV.php",
+    "Network Engineering": "Network-ENG.php",
+    Courses: "course-list.php",
   };
 
   searchInput.addEventListener("input", function () {
@@ -53,7 +53,7 @@ function initializeSearch() {
 
 function loadNav() {
   // Fetch the HTML content of the navigation bar
-  fetch("nav.html")
+  fetch("nav.php")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("nav-container").innerHTML = data;

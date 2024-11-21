@@ -1,6 +1,6 @@
 function loadNav() {
   // Fetch the HTML content of the navigation bar
-  fetch("nav.html")
+  fetch("nav.php")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("nav-container").innerHTML = data;
@@ -62,9 +62,9 @@ window.onload = () => {
 // HOME PAGE
 function start() {
   // Container Button very start of the home page
-  window.open("/docs/course-list.html");
+  window.open("/docs/course-list.php");
 }
 
 function Home() {
-  window.open("index.html");
+  window.open("index.php");
 }

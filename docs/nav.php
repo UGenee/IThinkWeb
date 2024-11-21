@@ -3,19 +3,19 @@
 <div class="nav">
   <div class="wrap">
     <div class="logo">
-      <a href="index.html">
+      <a href="index.php">
         <img src="LogoVer2.png" />
       </a>
     </div>
     <div class="links-container">
       <button class="dropdown-button">☰</button>
       <div class="links">
-        <a href="/index.html" data-table="Home">Home</a>
-        <a href="about.html" data-table="About">About</a>
-        <a href="contact.html" data-table="Contact">Contacts</a>
-        <a href="portfolio.html" data-table="Portfolio">Portfolio</a>
-        <a href="review.html" data-table="Review">Review</a>
-        <a href="course-list.html" data-table="Courses">Courses</a>
+        <a href="/index.php" data-table="Home">Home</a>
+        <a href="about.php" data-table="About">About</a>
+        <a href="contact.php" data-table="Contact">Contacts</a>
+        <a href="portfolio.php" data-table="Portfolio">Portfolio</a>
+        <a href="review.php" data-table="Review">Review</a>
+        <a href="course-list.php" data-table="Courses">Courses</a>
       </div>
     </div>
   </div>

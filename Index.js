@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "docs")));
 
 // Function to read the navbar and combine it with the page content
 const getPageWithNavbar = (page) => {
-  const navbarPath = path.join(__dirname, "docs", "nav.html");
+  const navbarPath = path.join(__dirname, "docs", "nav.php");
   const pagePath = path.join(__dirname, "docs", page);
 
   return new Promise((resolve, reject) => {
@@ -39,7 +39,7 @@ const getPageWithNavbar = (page) => {
 
 // Route for serving the home page
 app.get("/", (req, res) => {
-  getPageWithNavbar("index.html")
+  getPageWithNavbar("index.php")
     .then((combinedContent) => {
       res.send(combinedContent);
     })
