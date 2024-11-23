@@ -1,3 +1,30 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = ""; 
+$dbname = "mydb";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch reviews for the carousel
+$reviews = [];
+$sql = "SELECT review_name, review_message FROM reviews";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $reviews[] = $row;
+    }
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,33 +112,4 @@
     <script src="nav.js"></script>
     <script src="review.js"></script>
 </body>
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = ""; 
-$dbname = "mydb";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Fetch reviews for the carousel
-$reviews = [];
-$sql = "SELECT review_name, review_message FROM reviews";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $reviews[] = $row;
-    }
-}
-
-$conn->close();
-?>
-
-
 </html>
