@@ -62,7 +62,7 @@ window.onload = () => {
 // HOME PAGE
 function start() {
   // Container Button very start of the home page
-  window.open("/docs/course-list.php");
+  window.open("course-list.php");
 }
 
 function Home() {
