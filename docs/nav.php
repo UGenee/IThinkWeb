@@ -10,7 +10,7 @@
     <div class="links-container">
       <button class="dropdown-button">☰</button>
       <div class="links">
-        <a href="/index.php" data-table="Home">Home</a>
+        <a href="index.php" data-table="Home">Home</a>
         <a href="about.php" data-table="About">About</a>
         <a href="contact.php" data-table="Contact">Contacts</a>
         <a href="portfolio.php" data-table="Portfolio">Portfolio</a>
