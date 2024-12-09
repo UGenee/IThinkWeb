@@ -14,7 +14,7 @@ function initializeSearch() {
     Cybersecurity: "CyberSecurity.php",
     "Data Science": "Data-Science.php",
     "Information Technology": "IT.php",
-    Java: "Java.php",
+    Java: "Java-article.php",
     "Software Engineering": "Software-eng.php",
     "Mobile App Development": "Moble-App.php",
     "Web Development": "WEB-DEV.php",

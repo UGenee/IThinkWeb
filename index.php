@@ -10,32 +10,9 @@
         <link rel="stylesheet" href="/docs/template.css">
 </head>
 <body>
-
-<div class="nav">
-    <div class="wrap">
-        <div class="logo">
-            <a href="index.php">
-                <img src="/docs/LogoVer2.png" />
-            </a>
-        </div>
-        <div class="links-container">
-            <button class="dropdown-button">☰</button>
-            <div class="links">
-                <a href="index.php" data-table="Home">Home</a>
-                <a href="/docs/about.php" data-table="About">About</a>
-                <a href="/docs/contact.php" data-table="Contact">Contacts</a>
-                <a href="/docs/portfolio.php" data-table="Portfolio">Portfolio</a>
-                <a href="/docs/review.php" data-table="Review">Review</a>
-                <a href="/docs/course-list.php" data-table="Courses">Courses</a>
-            </div>
-        </div>
-    </div>
-    <form id="search-form">
-        <input type="text" id="search-input" placeholder="Search...">
-    </form>
-</div>
-
-<div id="search-results"></div>   
+    <?php
+    include 'nav.php';
+    ?>
 
     <div class="space-LOL"></div> 
 
@@ -109,7 +86,6 @@
         <footer class="footer">
             &copy; 2024 IThink. All Rights Reserved.
         </footer>
-
 </body>
 
     <script src="/docs/script.js"></script>

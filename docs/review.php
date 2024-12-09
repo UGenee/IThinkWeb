@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="review.css">
 </head>
 <body>
-
-  <div id="nav-container"></div>
+  <?php
+  include 'nav.php'
+  ?>
 
   <div class="space-LOL"></div>
 
@@ -48,6 +49,20 @@
 
   <script src="nav.js"></script>
   <script src="review.js"></script>
+
+  <?php
+include 'db.php';
+
+try {
+    $stmt = $pdo->query("SELECT * FROM reviews");
+    $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($reviews);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(["error" => "Internal Server Error"]);
+}
+?>
+
     </body>
     </html>
   
